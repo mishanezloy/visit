@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Злобин Михаил Олегович</h1>
+    </header>
+    
+    <section class="about">
+        <img src="img/1.jpg" alt="Фото" class="profile-photo">
+        <h2>О Себе</h2>
+        <p>3D-Designer / VFX-Designer</p>
+		<p>Высшее образованние: СПбГУПТД "Прикладная информатика в дизайне"</p>
+    </section>
+
+    <section class="skills">
+        <h2>Навыки</h2>
+        <div class="skills-container">
+            <div class="skill">3D-modeling</div>
+            <div class="skill">3D-animation</div>
+            <div class="skill">Blender / Substance Painter / UE</div>
+            <div class="skill">Пакет Adobe</div>
+            <div class="skill">Figma</div>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <h2>Портфолио</h2>
+        <div class="slider">
+            <img src="img/2.png" alt="Проект 1" class="slide active">
+            <img src="img/3.png" alt="Проект 2" class="slide">
+            <img src="img/4.png" alt="Проект 3" class="slide">
+            <button class="prev" onclick="changeSlide(-1)">❮</button>
+            <button class="next" onclick="changeSlide(1)">❯</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025  Чат-GPT "ЭЙ,БРО!" 20 минут</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>

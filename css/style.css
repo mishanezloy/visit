@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #4B0082; /* Темно-фиолетовый цвет */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.about, .skills, .portfolio {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    border: 5px solid #4B0082; /* Обводка вокруг фотографии */
+    box-shadow: 0 0 10px rgba(75, 0, 130, 0.8); /* Светящееся свечение */
+    transition: box-shadow 0.3s; /* Плавный переход для свечения */
+}
+
+.profile-photo:hover {
+    box-shadow: 0 0 20px rgba(75, 0, 130, 1); /* Увеличенное свечение при наведении */
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column; /* Расположение навыков в столбик */
+    gap: 10px; /* Отступ между навыками */
+}
+
+.skill {
+    background-color: #6A0DAD; /* Фиолетовый цвет */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #4B0082; /* Темно-фиолетовый цвет */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.slider {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.slide {
+    width: 100%;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Плавный переход */
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 5px solid #4B0082; /* Обводка вокруг изображений портфолио */
+    box-shadow: 0 0 10px rgba(75, 0, 130, 0.8); /* Светящееся свещение */
+}
+
+.slide.active {
+    opacity: 1;
+    position: relative; /* Возвращаем элемент обратно в естественный поток */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10; /* Устанавливаем на передний план */
+}
+
+.prev {
+    left: 10px; /* Позиция для кнопки "назад" */
+}
+
+.next {
+    right: 10px; /* Позиция для кнопки "вперед" */
+}
